@@ -99,7 +99,7 @@ AUTH_USER_MODEL = 'accounts.Account'
 # }
 
 env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, 'laalkurti/.env'))
+environ.Env.read_env()
 
 DATABASES = {
     "default": dj_database_url.parse(env('DATABSE_URL'),
