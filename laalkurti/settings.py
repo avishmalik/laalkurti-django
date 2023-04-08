@@ -102,7 +102,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 DATABASES = {
-    "default": dj_database_url.parse(config('DATABSE_URL'))
+    "default": dj_database_url.parse('postgres://testdb_on7n_user:JKlfLiOnsxR8dOlwsAaxRBoHD5mqT0d7@dpg-cgogglgrddl9mmrdrb40-a.oregon-postgres.render.com/testdb_on7n')
 }
 
 
