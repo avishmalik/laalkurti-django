@@ -102,10 +102,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 DATABASES = {
-    "default": dj_database_url.parse(config('DATABSE_URL')),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    "default": dj_database_url.parse(config('DATABSE_URL'))
 }
 
 
