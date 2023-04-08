@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -97,8 +98,14 @@ AUTH_USER_MODEL = 'accounts.Account'
 #     }
 # }
 
+env = environ.Env()
+environ.Env.read_env()
+
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABSE_URL"))
+    "default": dj_database_url.parse(env('DATABSE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
